@@ -22,10 +22,13 @@ data/raw/**
 data/interim/**
 data/processed/**
 data/external/**
+data/manual/**
 !data/raw/.gitkeep
 !data/interim/.gitkeep
 !data/processed/.gitkeep
 !data/external/.gitkeep
+!data/manual/README.md
+!data/manual/.gitkeep
 
 # Notebooks
 .ipynb_checkpoints/

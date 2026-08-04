@@ -32,6 +32,7 @@ APIs/web/manual sources
 ├── config/                    # Example local settings and dbt profile template
 ├── data/
 │   ├── raw/                   # Immutable raw responses; not committed
+│   ├── manual/                # Manually entered/validated source-support files; contents not committed
 │   ├── interim/               # Temporary cleaned extracts; not committed
 │   ├── processed/             # Local analytical extracts; not committed
 │   └── external/              # Manually sourced reference files; not committed
@@ -50,7 +51,10 @@ APIs/web/manual sources
 │   └── tests/
 ├── docs/
 │   ├── architecture/
+│   ├── dashboard/
 │   ├── data_dictionary/
+│   ├── notebook_plans/
+│   ├── project_scope/
 │   └── source_register/
 ├── notebooks/
 │   ├── eda/
@@ -59,6 +63,7 @@ APIs/web/manual sources
 ├── reports/
 │   ├── exports/
 │   └── powerbi/
+├── powerbi/                   # Power BI workspace notes, PBIX handoff guidance, and connection docs
 ├── scripts/                   # CLI entrypoints and operational scripts
 ├── src/workshop_market/
 │   ├── collection/            # API/web collectors

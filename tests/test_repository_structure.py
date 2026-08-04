@@ -9,6 +9,7 @@ def test_expected_top_level_structure_exists() -> None:
     expected_paths = [
         "config",
         "data/raw",
+        "data/manual",
         "data/interim",
         "data/processed",
         "db/init",
@@ -20,6 +21,7 @@ def test_expected_top_level_structure_exists() -> None:
         "docs/project_scope",
         "docs/source_register",
         "notebooks/eda",
+        "powerbi",
         "reports/powerbi",
         "scripts",
         "src/workshop_market/collection",

@@ -20,11 +20,13 @@ See the root README for the active folder map. The important split is:
 
 - `src/workshop_market/collection`: API and web collection modules.
 - `data/raw`: immutable raw payloads, excluded from git.
+- `data/manual`: manually entered or manually validated source-support files, excluded from git except documentation.
 - `src/workshop_market/cleaning`: Python standardization and entity-resolution code.
 - `db/init`: PostgreSQL schema bootstrap scripts.
 - `dbt/models/staging`: dbt source-facing standardization views.
 - `dbt/models/intermediate`: reusable analytical logic.
 - `dbt/models/marts/powerbi`: stable Power BI-facing tables.
+- `powerbi`: Power BI workspace notes and handoff documentation.
 - `notebooks`: EDA, hypothesis testing, and feasibility work.
 - `tests`: repository, cleaning, and quality tests.
 
