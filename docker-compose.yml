@@ -1,0 +1,42 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: workshop_market_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-workshop_market}
+      POSTGRES_USER: ${POSTGRES_USER:-workshop_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in a local .env file}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.8.latest
+    container_name: workshop_market_dbt
+    profiles_dir: /usr/app/profiles
+    working_dir: /usr/app/dbt
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DBT_HOST: postgres
+      DBT_PORT: 5432
+      DBT_DBNAME: ${POSTGRES_DB:-workshop_market}
+      DBT_USER: ${POSTGRES_USER:-workshop_user}
+      DBT_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in a local .env file}
+      DBT_SCHEMA: analytics
+    volumes:
+      - ./dbt:/usr/app/dbt
+      - ./config/dbt_profiles:/usr/app/profiles:ro
+    command: ["debug"]
+
+volumes:
+  postgres_data:

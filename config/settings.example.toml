@@ -1,0 +1,30 @@
+[project]
+name = "india-workshop-market-analysis"
+timezone = "Asia/Kolkata"
+
+[collection]
+raw_response_root = "data/raw"
+default_rate_limit_seconds = 2
+user_agent = "workshop-market-study/0.1 contact=<set-contact-email-locally>"
+
+[markets]
+cities = ["Bengaluru", "Mumbai", "Delhi NCR", "Hyderabad", "Pune", "Chennai"]
+pilot_cities = ["Bengaluru", "Hyderabad"]
+
+[taxonomy]
+primary_categories = [
+  "Cooking and Baking",
+  "Art and Painting",
+  "Pottery and Ceramics",
+  "Coffee Making",
+  "Fitness and Wellness",
+  "Professional Skills",
+  "Beauty and Fashion",
+  "DIY and Crafts",
+]
+pilot_categories = [
+  "Cooking and Baking",
+  "Art and Painting",
+  "Pottery and Ceramics",
+  "Coffee Making",
+]

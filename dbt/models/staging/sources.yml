@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: "Immutable raw records loaded from API, HTML, CSV, manual, and archive collection."
+    tables:
+      - name: source_responses
+        description: "One row per collected response or source artifact metadata record."
+        columns:
+          - name: source_response_id
+            tests:
+              - not_null
+              - unique
+          - name: source_name
+            tests:
+              - not_null
+          - name: collected_at
+            tests:
+              - not_null

@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+profiles.yml
+*.key
+*.pem
+*.p12
+*.jsonl
+
+# Local data artifacts
+data/raw/**
+data/interim/**
+data/processed/**
+data/external/**
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+
+# Notebooks
+.ipynb_checkpoints/
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+
+# Reports and BI exports
+reports/exports/**
+reports/powerbi/**
+!reports/exports/.gitkeep
+!reports/powerbi/.gitkeep
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

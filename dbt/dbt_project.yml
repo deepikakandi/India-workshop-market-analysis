@@ -1,0 +1,33 @@
+name: workshop_market
+version: "1.0.0"
+config-version: 2
+
+profile: workshop_market
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  workshop_market:
+    staging:
+      +schema: standardized
+      +materialized: view
+    intermediate:
+      +schema: analytics
+      +materialized: view
+    marts:
+      analysis:
+        +schema: analytics
+        +materialized: table
+      powerbi:
+        +schema: powerbi
+        +materialized: table

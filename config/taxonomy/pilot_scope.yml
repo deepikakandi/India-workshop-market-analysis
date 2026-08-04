@@ -1,0 +1,18 @@
+pilot:
+  cities:
+    - Bengaluru
+    - Hyderabad
+  categories:
+    - Cooking and Baking
+    - Art and Painting
+    - Pottery and Ceramics
+    - Coffee Making
+  products:
+    - Individual Workshops
+    - Camps
+    - Birthday Events
+  formats:
+    - Dedicated Studio
+    - Rented Venue
+    - Mobile
+    - Online

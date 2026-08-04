@@ -1,0 +1,23 @@
+{
+  "pilot_cities": [
+    "Bengaluru",
+    "Hyderabad"
+  ],
+  "pilot_categories": [
+    "Cooking and Baking",
+    "Art and Painting",
+    "Pottery and Ceramics",
+    "Coffee Making"
+  ],
+  "pilot_products": [
+    "Individual Workshops",
+    "Camps",
+    "Birthday Events"
+  ],
+  "pilot_formats": [
+    "Dedicated Studio",
+    "Rented Venue",
+    "Mobile",
+    "Online"
+  ]
+}
