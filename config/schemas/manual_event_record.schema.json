@@ -1,0 +1,398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/manual_event_record.schema.json",
+  "title": "Manual Event Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manual_record_id",
+    "source_id",
+    "source_record_identifier",
+    "source_url",
+    "evidence_url",
+    "observed_at",
+    "entered_by",
+    "verified_by",
+    "verification_status",
+    "event_title_original",
+    "organizer_name_original",
+    "venue_name_original",
+    "city_original",
+    "locality_original",
+    "category_original",
+    "description_short_original",
+    "city_code",
+    "primary_category_code",
+    "subcategory_code",
+    "secondary_category_codes",
+    "product_type_code",
+    "delivery_format_code",
+    "operating_model_code",
+    "audience_codes",
+    "minimum_age",
+    "maximum_age",
+    "skill_level_code",
+    "event_start_at",
+    "event_end_at",
+    "duration_minutes",
+    "recurrence_text_original",
+    "recurrence_type",
+    "registration_deadline",
+    "listed_price_inr",
+    "discounted_price_inr",
+    "tax_included",
+    "additional_fee_inr",
+    "pricing_unit_code",
+    "price_tier_code",
+    "materials_included",
+    "take_home_product",
+    "certificate_included",
+    "event_status_code",
+    "seats_total",
+    "seats_available",
+    "interested_count",
+    "sold_out_observed",
+    "waitlist_available",
+    "booking_required",
+    "demand_signal_notes",
+    "classification_confidence",
+    "price_confidence",
+    "date_confidence",
+    "status_confidence",
+    "missing_field_notes",
+    "reviewer_notes"
+  ],
+  "properties": {
+    "manual_record_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9_\\-]+$"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "source_record_identifier": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_url": {
+      "type": "string",
+      "pattern": "^https?://"
+    },
+    "evidence_url": {
+      "type": "string",
+      "pattern": "^https?://"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entered_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verified_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "needs_review",
+        "verified",
+        "rejected"
+      ]
+    },
+    "event_title_original": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "organizer_name_original": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "venue_name_original": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 180
+    },
+    "city_original": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "locality_original": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 120
+    },
+    "category_original": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 180
+    },
+    "description_short_original": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 280
+    },
+    "city_code": {
+      "type": "string",
+      "enum": [
+        "bengaluru",
+        "hyderabad"
+      ]
+    },
+    "primary_category_code": {
+      "type": "string",
+      "enum": [
+        "cooking_and_baking",
+        "art_and_painting",
+        "pottery_and_ceramics",
+        "coffee_making"
+      ]
+    },
+    "subcategory_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "secondary_category_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "product_type_code": {
+      "type": "string"
+    },
+    "delivery_format_code": {
+      "type": "string"
+    },
+    "operating_model_code": {
+      "type": "string"
+    },
+    "audience_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "minimum_age": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 120
+    },
+    "maximum_age": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 120
+    },
+    "skill_level_code": {
+      "type": "string"
+    },
+    "event_start_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "event_end_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "duration_minutes": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "recurrence_text_original": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 180
+    },
+    "recurrence_type": {
+      "type": "string",
+      "enum": [
+        "one_time",
+        "recurring",
+        "course",
+        "camp",
+        "unknown"
+      ]
+    },
+    "registration_deadline": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "listed_price_inr": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "discounted_price_inr": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "tax_included": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "additional_fee_inr": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "pricing_unit_code": {
+      "type": "string"
+    },
+    "price_tier_code": {
+      "type": "string"
+    },
+    "materials_included": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "take_home_product": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "certificate_included": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "event_status_code": {
+      "type": "string"
+    },
+    "seats_total": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "seats_available": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "interested_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "sold_out_observed": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "waitlist_available": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "booking_required": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "demand_signal_notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 280
+    },
+    "classification_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "price_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "date_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "status_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "missing_field_notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 280
+    },
+    "reviewer_notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 280
+    }
+  }
+}

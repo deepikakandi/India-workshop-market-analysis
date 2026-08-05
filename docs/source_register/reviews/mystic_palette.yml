@@ -1,0 +1,72 @@
+review_id: mystic_palette_day4_preliminary_review
+source_id: mystic_palette
+source_name: "Mystic Palette"
+is_template: false
+reviewed_by: Codex
+reviewed_at: "2026-08-05T12:00:00-04:00"
+re_review_date: "2026-11-05"
+not_legal_advice: true
+source_identity:
+  owner_or_operator: "Mystic Palette"
+  base_url: "https://mysticpalette.art"
+  source_type: first_party_organizer
+  cities_supported: ["Hyderabad"]
+  categories_supported: ["Art and Painting"]
+  product_types_supported: ["Individual one-time workshop", "Recurring class", "Private group event", "Other"]
+evidence:
+  terms_url: "https://mysticpalette.art"
+  privacy_url: "https://mysticpalette.art"
+  robots_url: "https://mysticpalette.art/robots.txt"
+  api_documentation_url: ""
+  review_evidence_url: "https://mysticpalette.art; https://mysticpalette.art/workshops"
+public_access:
+  authentication_required: false
+  paid_account_required: false
+  public_pages_accessible_for_manual_review: true
+  observed_public_formats:
+    - html
+  public_feed_or_export_identified: false
+terms_and_permissions:
+  commercial_use_restrictions: "not fully determined; internal research only"
+  automated_access_restrictions: "no automated access approved; no API/feed/export/written permission identified"
+  redistribution_restrictions: "do not republish source text, images, or protected content"
+  storage_restrictions: "store only manually transcribed factual fields and review metadata"
+  attribution_requirements: "retain source URL and observation timestamp"
+  written_authorization_needed: false_for_limited_manual_scope_true_for_automation
+technical_feasibility:
+  static_html: true
+  javascript_rendered: unknown
+  official_api: false
+  public_feed: false
+  sitemap: unknown
+  manual_only: true
+  login_protected: false
+  anti_bot_controls: unknown
+  captcha: unknown
+  geolocation_dependency: unknown
+data_usefulness:
+  cities_covered: ["Hyderabad"]
+  workshop_categories_covered: ["Art and Painting"]
+  fields_available: "factual workshop/course fields where visibly published"
+  price_availability: "where published"
+  date_and_duration_availability: "where published"
+  age_group_availability: "where published"
+  organizer_availability: "available from first-party source identity"
+  venue_availability: "where published"
+  availability_or_sold_out_status: "where explicitly published; do not infer"
+  historical_depth: Current only
+  recurring_event_information: "where published"
+  expected_duplicate_risk: Low
+decision:
+  collection_decision: approved_manual_collection
+  automation_permission_status: "Automated collection prohibited or unsuitable"
+  automated_bulk_extraction_approved: false
+  bulk_extraction_approved: false
+  official_api_or_written_permission_identified: false
+  decision_reason: "Official first-party public source reviewed for limited manual transcription of factual workshop fields only; no automated collection, bulk extraction, long descriptions, images, reviews, or personal data approved."
+  permitted_use_scope: "limited_manual_collection_of_factual_workshop_fields_for_internal_research_only"
+  permitted_fields: ["event_title_original", "organizer_name_original", "venue_name_original", "city_original", "locality_original", "category_original", "description_short_original", "city_code", "primary_category_code", "subcategory_code", "secondary_category_codes", "product_type_code", "delivery_format_code", "operating_model_code", "audience_codes", "minimum_age", "maximum_age", "skill_level_code", "event_start_at", "event_end_at", "duration_minutes", "recurrence_text_original", "recurrence_type", "registration_deadline", "listed_price_inr", "discounted_price_inr", "tax_included", "additional_fee_inr", "pricing_unit_code", "price_tier_code", "materials_included", "take_home_product", "certificate_included", "event_status_code", "seats_total", "seats_available", "interested_count", "sold_out_observed", "waitlist_available", "booking_required", "demand_signal_notes"]
+  prohibited_fields: ["full source descriptions", "images", "image URLs", "customer names", "customer contact details", "reviews or testimonials", "cookies", "authorization headers", "credentials", "payment data", "personal data"]
+  maximum_request_frequency: "manual browser observation only; no automated request frequency approved"
+notes: >-
+  Selected for Day 5 Hyderabad art/painting manual pilot. Dedicated terms/privacy pages were not identified in the initial public review.

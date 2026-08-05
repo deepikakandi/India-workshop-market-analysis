@@ -1,0 +1,219 @@
+# Day 5 manual pilot source selection.
+# This file selects concrete, individually reviewed first-party sources only.
+# It does not authorize automated collection or bulk extraction.
+
+schema_version: 2
+created_at: "2026-08-05"
+reviewed_by: Codex
+manual_collection_policy:
+  decision_value_required: approved_manual_collection
+  automation_allowed: false
+  desired_overall_record_range: "approximately 40-70 distinct manual event/course records when available"
+  range_is_mandatory: false
+  quality_and_uniqueness_priority: true
+  shortfall_policy: >-
+    Falling below 40 records is acceptable when approved sources do not expose enough
+    distinct, verifiable records. Researchers must not manufacture, duplicate, split,
+    or repeatedly enter the same workshop only to satisfy a target.
+  distinct_record_rule: >-
+    A manual record must represent a distinct workshop occurrence, distinct recurring
+    program, distinct course product, or independently observable historical event.
+    The same workshop must not be duplicated, split, or repeatedly entered only to
+    meet a source target.
+  scope_note: >-
+    approved_manual_collection is an internal project-governance decision. It permits
+    narrow transcription of factual public fields for internal research only and does
+    not imply that the source owner granted a license or endorsed the project. Do not
+    copy full descriptions, images, protected creative content, review text, customer
+    details, cookies, credentials, or page payloads. Retain source URL and observation
+    timestamp.
+selected_sources:
+  - source_id: mud_effects
+    city: bengaluru
+    category_codes: [pottery_and_ceramics]
+    product_types: [individual_one_time_workshop, recurring_class, class_pack]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: &manual_fields
+      - event_title_original
+      - organizer_name_original
+      - venue_name_original
+      - city_original
+      - locality_original
+      - category_original
+      - description_short_original
+      - city_code
+      - primary_category_code
+      - subcategory_code
+      - secondary_category_codes
+      - product_type_code
+      - delivery_format_code
+      - operating_model_code
+      - audience_codes
+      - minimum_age
+      - maximum_age
+      - skill_level_code
+      - event_start_at
+      - event_end_at
+      - duration_minutes
+      - recurrence_text_original
+      - recurrence_type
+      - registration_deadline
+      - listed_price_inr
+      - discounted_price_inr
+      - tax_included
+      - additional_fee_inr
+      - pricing_unit_code
+      - price_tier_code
+      - materials_included
+      - take_home_product
+      - certificate_included
+      - event_status_code
+      - seats_total
+      - seats_available
+      - interested_count
+      - sold_out_observed
+      - waitlist_available
+      - booking_required
+      - demand_signal_notes
+    collection_notes: "Bengaluru pottery source; target factual workshop/course fields only."
+  - source_id: kalasaara
+    city: bengaluru
+    category_codes: [art_and_painting]
+    product_types: [individual_one_time_workshop, recurring_class, birthday_party]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Bengaluru art/painting source; avoid copying artwork images or long descriptions."
+  - source_id: baking_hub
+    city: bengaluru
+    category_codes: [cooking_and_baking]
+    product_types: [individual_one_time_workshop, recurring_class, professional_course, certification_course]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Bengaluru cooking/baking source added to maintain complete city-category coverage while Lavonne remains pending."
+  - source_id: scai
+    city: bengaluru
+    category_codes: [coffee_making]
+    product_types: [professional_course, certification_course, individual_one_time_workshop]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Bengaluru coffee-training coverage from one official SCAI source row."
+  - source_id: tworks
+    city: hyderabad
+    category_codes: [pottery_and_ceramics]
+    product_types: [individual_one_time_workshop, recurring_class, professional_course]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Hyderabad pottery/ceramics coverage; do not infer sold-out status from registration closure."
+  - source_id: crust_and_crumble
+    city: hyderabad
+    category_codes: [cooking_and_baking]
+    product_types: [individual_one_time_workshop, recurring_class, professional_course]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Hyderabad cooking/baking coverage from official first-party pages."
+  - source_id: escapades
+    city: hyderabad
+    category_codes: [cooking_and_baking]
+    product_types: [individual_one_time_workshop, professional_course, certification_course]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Hyderabad baking source; selected to test premium pricing and any explicitly published seat/status fields."
+  - source_id: mystic_palette
+    city: hyderabad
+    category_codes: [art_and_painting]
+    product_types: [individual_one_time_workshop, recurring_class, private_group_event]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Hyderabad art/painting coverage; do not copy art images or full source descriptions."
+  - source_id: scai
+    city: hyderabad
+    category_codes: [coffee_making]
+    product_types: [professional_course, certification_course, individual_one_time_workshop]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Hyderabad coffee-training coverage using the same official SCAI source row and city/location coverage."
+  - source_id: aestraa
+    city: hyderabad
+    category_codes: [art_and_painting]
+    product_types: [individual_one_time_workshop, recurring_class, birthday_party, corporate_event, private_group_event]
+    collection_decision: approved_manual_collection
+    minimum_expected_records: 0
+    target_records: 5
+    maximum_records: 10
+    record_shortfall_allowed: true
+    observation_window: "Day 5 manual pilot window"
+    historical_records_allowed: true
+    historical_coverage_notes: "Use only independently observable historical events or course products when public and verifiable; do not duplicate current records to meet targets."
+    permitted_fields: *manual_fields
+    collection_notes: "Optional Hyderabad art alternate; Aestraa is classified only as art_and_painting pending additional first-party evidence for any other category."
+
+excluded_sources:
+  - source_id: lavonne
+    reason: "Terms include copy/reproduction/exploitation and spider/crawl/scrape restrictions; not approved for Day 5 manual event transcription without further permission review."
+  - source_id: somethings_brewing
+    reason: "Terms prohibit spidering/crawling/scraping and unapproved copying/reproduction/exploitation; not selected for the first automated or manual event pilot."
+  - source_id: google_places_api
+    reason: "Official API candidate for later location/reputation evaluation only; not a Day 5 manual event-source candidate."

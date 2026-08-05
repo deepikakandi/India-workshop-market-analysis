@@ -33,3 +33,11 @@
 - Updated District and BookMyShow source-register rows with preliminary evidence while keeping collection decisions pending.
 - Added raw-response and collection-run metadata JSON schemas, data dictionaries, fixtures, and validation tests.
 - No live workshop data, event API calls, scrapers, PostgreSQL setup, or dashboard code were added.
+
+## 2026-08-05 - Day 4 first-party source reviews and manual pilot contract
+
+- Registered concrete first-party candidate sources for Bengaluru and Hyderabad, including pottery, art, baking, and coffee-making coverage.
+- Created individual source-review records for the Day 4 first-party sources.
+- Selected a balanced Day 5 manual pilot in `config/pilot/manual_source_selection.yml`; no live workshop records were collected. Later correction made Aestraa art-only and added flexible record targets where shortfalls are allowed.
+- Added the manual event-record JSON Schema, data dictionary, CSV import template, validator, fixture, and tests.
+- Kept automated collection blocked unless a future source review records an official API, feed, export, written permission, or other documented permission basis.

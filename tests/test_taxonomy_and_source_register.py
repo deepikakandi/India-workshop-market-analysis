@@ -176,6 +176,7 @@ def test_required_source_register_columns_exist() -> None:
         "last_reviewed_date",
         "reviewer_notes",
         "terms_url",
+        "privacy_url",
         "robots_url",
         "api_documentation_url",
         "review_evidence_url",
@@ -290,10 +291,22 @@ def test_required_source_discovery_backlog_columns_exist() -> None:
     assert required_columns.issubset(columns)
 
 
-def test_no_current_source_is_approved() -> None:
+def test_no_source_is_approved_for_automated_collection() -> None:
     rows = load_source_register()
+    automation_approval_values = {"Official API permitted", "Public export permitted"}
 
-    assert {row["collection_decision"] for row in rows} == {"pending_review"}
+    assert all(row["automation_permission_status"] not in automation_approval_values for row in rows)
+
+
+def test_day4_manual_approvals_remain_manual_only() -> None:
+    rows = load_source_register()
+    manual_sources = [row for row in rows if row["collection_decision"] == "approved_manual_collection"]
+
+    assert manual_sources
+    for row in manual_sources:
+        assert row["automation_permission_status"] == "Automated collection prohibited or unsuitable"
+        assert "manual" in row["permitted_use_scope"]
+        assert row["review_evidence_url"].strip()
 
 
 def test_district_and_bookmyshow_are_not_approved_for_automated_bulk_collection() -> None:

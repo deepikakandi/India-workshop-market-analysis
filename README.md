@@ -119,6 +119,12 @@ Day 3 governance files:
 
 No live workshop data has been collected yet. Robots rules and sitemap visibility do not by themselves grant permission to reuse source content. Raw payloads will be immutable once collection begins, and sensitive request information must never be stored.
 
+## Day 4 manual pilot contracts
+
+Day 4 adds concrete first-party source reviews, a manual source-selection file, and a manual event-record contract. The selection lives at [config/pilot/manual_source_selection.yml](config/pilot/manual_source_selection.yml). The schema and template are [config/schemas/manual_event_record.schema.json](config/schemas/manual_event_record.schema.json), [docs/data_dictionary/manual_event_record.md](docs/data_dictionary/manual_event_record.md), and [data/manual/templates/pilot_event_records.csv](data/manual/templates/pilot_event_records.csv).
+
+Manual approval is intentionally narrow: `approved_manual_collection` is an internal project-governance decision that permits only short factual public fields to be transcribed from individually reviewed first-party sources for internal research. It does not imply that a source owner granted a license or endorsed the project. No automated collection, API calls, raw workshop payload storage, copied descriptions, images, protected creative content, personal customer details, cookies, credentials, or authorization material are approved.
+
 ## Implementation sequence
 
 1. Confirm source register and compliance rules.

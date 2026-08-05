@@ -1,0 +1,72 @@
+review_id: somethings_brewing_day4_preliminary_review
+source_id: somethings_brewing
+source_name: "Something's Brewing"
+is_template: false
+reviewed_by: Codex
+reviewed_at: "2026-08-05T12:00:00-04:00"
+re_review_date: "2026-11-05"
+not_legal_advice: true
+source_identity:
+  owner_or_operator: "Something's Brewing"
+  base_url: "https://somethingsbrewing.in"
+  source_type: first_party_organizer
+  cities_supported: ["Bengaluru", "Hyderabad"]
+  categories_supported: ["Coffee Making"]
+  product_types_supported: ["Individual one-time workshop", "Professional course", "Other"]
+evidence:
+  terms_url: "https://somethingsbrewing.in/policies/terms-of-service"
+  privacy_url: "https://somethingsbrewing.in/policies/privacy-policy"
+  robots_url: "https://somethingsbrewing.in/robots.txt"
+  api_documentation_url: ""
+  review_evidence_url: "https://somethingsbrewing.in/policies/terms-of-service; https://somethingsbrewing.in/pages/help"
+public_access:
+  authentication_required: false
+  paid_account_required: false
+  public_pages_accessible_for_manual_review: true
+  observed_public_formats:
+    - html
+  public_feed_or_export_identified: false
+terms_and_permissions:
+  commercial_use_restrictions: "not fully determined; internal research only"
+  automated_access_restrictions: "no automated access approved; no API/feed/export/written permission identified"
+  redistribution_restrictions: "do not republish source text, images, or protected content"
+  storage_restrictions: "store only manually transcribed factual fields and review metadata"
+  attribution_requirements: "retain source URL and observation timestamp"
+  written_authorization_needed: true_for_manual_transcription_beyond_feasibility_observation_and_for_automation
+technical_feasibility:
+  static_html: true
+  javascript_rendered: unknown
+  official_api: false
+  public_feed: false
+  sitemap: unknown
+  manual_only: true
+  login_protected: false
+  anti_bot_controls: unknown
+  captcha: unknown
+  geolocation_dependency: unknown
+data_usefulness:
+  cities_covered: ["Bengaluru", "Hyderabad"]
+  workshop_categories_covered: ["Coffee Making"]
+  fields_available: "factual workshop/course fields where visibly published"
+  price_availability: "where published"
+  date_and_duration_availability: "where published"
+  age_group_availability: "where published"
+  organizer_availability: "available from first-party source identity"
+  venue_availability: "where published"
+  availability_or_sold_out_status: "where explicitly published; do not infer"
+  historical_depth: Current only
+  recurring_event_information: "where published"
+  expected_duplicate_risk: Low
+decision:
+  collection_decision: pending_review
+  automation_permission_status: "Automated collection prohibited or unsuitable"
+  automated_bulk_extraction_approved: false
+  bulk_extraction_approved: false
+  official_api_or_written_permission_identified: false
+  decision_reason: "Automated collection is rejected for now due terms prohibiting spidering/crawling/scraping and unapproved copying/reproduction/exploitation; limited manual factual observation remains pending legal/governance confirmation."
+  permitted_use_scope: "manual_feasibility_observation_only_pending_permission_basis"
+  permitted_fields: ["source identity", "public URL structure observations", "high-level field availability notes"]
+  prohibited_fields: ["full source descriptions", "images", "image URLs", "customer names", "customer contact details", "reviews or testimonials", "cookies", "authorization headers", "credentials", "payment data", "personal data"]
+  maximum_request_frequency: "manual browser observation only; no automated request frequency approved"
+notes: >-
+  Terms prohibit reproducing, copying, selling, reselling, or exploiting site content without written permission and prohibit spidering, crawling, and scraping. Not selected as the first automated collector.

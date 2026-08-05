@@ -70,3 +70,11 @@
 - Raw payload paths must remain under `data/raw/`.
 - Raw payloads will be immutable once collection begins.
 - Sensitive request information, including cookies, authorization headers, session tokens, API keys, passwords, and personal credentials, must never be stored.
+
+## 2026-08-05 - Day 4 manual-first pilot source decision
+
+Decision: The first data pilot will use manually transcribed factual fields from individually reviewed first-party sources. Automated web collection will be added only where an official API, public feed, export, written permission, or other documented permission basis exists.
+
+Rationale: First-party sources provide cleaner provenance and lower duplicate risk for the first pilot. Manual transcription allows controlled validation of the taxonomy and event-record contract without assuming scraping, reuse, or API rights.
+
+Consequence: Day 5 collection must use `config/pilot/manual_source_selection.yml` and `config/schemas/manual_event_record.schema.json`. `automation_permission_status` remains restrictive even when `collection_decision = approved_manual_collection`. Manual approval is an internal project-governance decision only; it does not imply source-owner license or endorsement.

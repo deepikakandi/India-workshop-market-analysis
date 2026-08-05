@@ -86,9 +86,16 @@ def test_raw_storage_path_with_parent_traversal_fails() -> None:
         validate_raw_response_metadata(record)
 
 
-def test_unreviewed_source_cannot_be_treated_as_approved() -> None:
+def test_pending_source_cannot_be_treated_as_approved() -> None:
     with pytest.raises(MetadataValidationError, match="not approved"):
         assert_source_collection_permitted("district")
+
+
+def test_manual_approved_source_can_be_resolved_for_future_guardrails() -> None:
+    row = assert_source_collection_permitted("mud_effects")
+
+    assert row["collection_decision"] == "approved_manual_collection"
+    assert row["automation_permission_status"] == "Automated collection prohibited or unsuitable"
 
 
 def test_missing_source_cannot_be_treated_as_approved() -> None:

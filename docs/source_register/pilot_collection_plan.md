@@ -51,3 +51,11 @@ Before any future collector runs:
 Robots rules, sitemap visibility, and public page access are not permission to reuse content. Terms can change and must be re-reviewed.
 
 Raw payloads will be immutable once collection begins and must stay under `data/raw/`. Sensitive request information such as cookies, authorization headers, session tokens, API keys, passwords, or personal credentials must never be stored.
+
+## Day 4 first-party manual pilot
+
+Day 4 registers concrete first-party sources and selects a limited Day 5 manual pilot in `config/pilot/manual_source_selection.yml`. The first data pilot will use manually transcribed factual fields from individually reviewed first-party sources. Automated web collection will be added only where an official API, public feed, export, written permission, or other documented permission basis exists.
+
+Selected sources must have `collection_decision = approved_manual_collection` and `automation_permission_status = Automated collection prohibited or unsuitable`. These values intentionally differ: manual transcription is approved only as an internal project-governance decision for narrow factual public fields, while automated collection remains blocked. This does not imply that the source owner granted a license or endorsed the project.
+
+Day 5 manual researchers should aim for approximately 40-70 distinct records overall when approved sources expose enough verifiable records, but this is not a mandatory minimum. Record quality and uniqueness take priority, and falling below 40 is acceptable when sources do not expose enough distinct, verifiable records. Each record must represent a distinct workshop occurrence, recurring program, course product, or independently observable historical event. Researchers must not duplicate, split, or repeatedly enter the same workshop to meet a target. They must not infer ticket sales, copy full descriptions, store images, collect personal customer data, store protected creative content, or treat `registration_closed` as `sold_out`. Lavonne, Something's Brewing, and Google Places API are excluded from the Day 5 manual event pilot pending further permission/API review. Baking Hub was added as the Bengaluru cooking/baking manual source while Lavonne remains pending.

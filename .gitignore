@@ -29,6 +29,8 @@ data/manual/**
 !data/external/.gitkeep
 !data/manual/README.md
 !data/manual/.gitkeep
+!data/manual/templates/
+!data/manual/templates/pilot_event_records.csv
 
 # Notebooks
 .ipynb_checkpoints/

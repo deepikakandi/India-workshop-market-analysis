@@ -100,3 +100,11 @@ Source terms can change. Reviewed sources need `re_review_date` and must be revi
 ## Registration status rule
 
 Keep `registration_closed` separate from `sold_out`. Do not infer that a closed registration means the event sold out.
+
+## Day 4 limited manual collection rule
+
+A concrete first-party source may receive `collection_decision = approved_manual_collection` only for manually transcribed factual public fields when the review record documents public access, evidence URLs, reviewer, review timestamp, permitted fields, prohibited fields, and the absence of an explicit prohibition on the planned manual use. This is an internal project-governance decision for internal research only; it does not imply that the source owner granted a license, approved reuse, or endorsed the project. It does not approve crawling, scraping, bulk extraction, copying long descriptions, storing images, reusing review text, collecting personal data, or storing protected creative content.
+
+For manual-approved Day 4 sources, `automation_permission_status` remains `Automated collection prohibited or unsuitable`. In other words, the operational restriction blocks automation while the governance decision allows only narrow manual transcription.
+
+Dedicated terms or privacy pages are not always visible during first review. When absent, the official public source page reviewed for policy links is recorded and the source must be re-reviewed before expanding beyond the Day 5 manual pilot.
