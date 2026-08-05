@@ -1,0 +1,42 @@
+review_id: public_studio_calendars_template
+source_id: template_only
+source_name: Public studio calendars review template
+source_family: Public studio calendars
+is_template: true
+template_status: not_an_approved_source
+reviewer: ""
+review_date: ""
+base_url: ""
+source_type: organizer_first_party_calendar
+instructions:
+  - "Public studio calendars cannot receive blanket approval."
+  - "Every calendar host or organizer calendar must receive an individual source ID and source-register review row."
+  - "Review feed/API terms separately from the organizer website terms."
+  - "Do not collect a public calendar automatically until its concrete row is reviewed."
+calendar_access_types_to_review:
+  - ical_feed
+  - google_calendar_public_feed
+  - rss_or_atom_feed
+  - sitemap_pages
+  - downloadable_schedule
+  - embedded_json
+  - manual_only
+terms_and_attribution_checks:
+  - terms_url
+  - privacy_url
+  - robots_url
+  - calendar_or_feed_documentation_url
+  - attribution_required
+  - redistribution_restrictions
+  - storage_restrictions
+  - rate_limits
+  - maximum_request_frequency
+required_decision_fields:
+  - collection_decision
+  - collection_decision_reason
+  - review_evidence_url
+  - reviewed_by
+  - reviewed_at
+  - re_review_date
+  - permitted_fields
+  - prohibited_fields

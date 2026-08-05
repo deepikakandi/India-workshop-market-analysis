@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/collection_run_metadata.schema.json",
+  "title": "Collection Run Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "collection_run_id",
+    "source_id",
+    "collector_name",
+    "collector_version",
+    "git_commit_sha",
+    "started_at",
+    "completed_at",
+    "run_status",
+    "requested_count",
+    "successful_count",
+    "failed_count",
+    "skipped_count",
+    "duplicate_count",
+    "bytes_collected",
+    "rate_limit_events",
+    "failure_summary",
+    "approved_collection_scope",
+    "city_scope",
+    "category_scope",
+    "initiated_by",
+    "environment_name"
+  ],
+  "properties": {
+    "collection_run_id": {"type": "string", "minLength": 1},
+    "source_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+    "collector_name": {"type": "string", "minLength": 1},
+    "collector_version": {"type": "string", "minLength": 1},
+    "git_commit_sha": {"type": "string", "pattern": "^[A-Fa-f0-9]{7,40}$"},
+    "started_at": {"type": "string", "format": "date-time"},
+    "completed_at": {"type": ["string", "null"], "format": "date-time"},
+    "run_status": {"type": "string", "enum": ["planned", "running", "completed", "completed_with_errors", "failed", "skipped"]},
+    "requested_count": {"type": "integer", "minimum": 0},
+    "successful_count": {"type": "integer", "minimum": 0},
+    "failed_count": {"type": "integer", "minimum": 0},
+    "skipped_count": {"type": "integer", "minimum": 0},
+    "duplicate_count": {"type": "integer", "minimum": 0},
+    "bytes_collected": {"type": "integer", "minimum": 0},
+    "rate_limit_events": {"type": "integer", "minimum": 0},
+    "failure_summary": {"type": ["string", "null"]},
+    "approved_collection_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["collection_decision", "permitted_use_scope", "permitted_fields", "prohibited_fields"],
+      "properties": {
+        "collection_decision": {
+          "type": "string",
+          "enum": [
+            "approved_official_api",
+            "approved_manual_collection",
+            "approved_limited_public_collection",
+            "pending_review",
+            "rejected",
+            "not_technically_feasible"
+          ]
+        },
+        "permitted_use_scope": {"type": "string"},
+        "permitted_fields": {"type": "array", "items": {"type": "string"}},
+        "prohibited_fields": {"type": "array", "items": {"type": "string"}},
+        "maximum_request_frequency": {"type": ["string", "null"]}
+      }
+    },
+    "city_scope": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "category_scope": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "initiated_by": {"type": "string", "minLength": 1},
+    "environment_name": {"type": "string", "minLength": 1}
+  }
+}

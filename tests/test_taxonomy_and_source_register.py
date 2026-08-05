@@ -183,6 +183,13 @@ def test_required_source_register_columns_exist() -> None:
         "reviewed_at",
         "collection_decision",
         "collection_decision_reason",
+        "permitted_use_scope",
+        "permitted_fields",
+        "prohibited_fields",
+        "re_review_date",
+        "written_permission_required",
+        "data_retention_limit",
+        "attribution_required",
     }
 
     assert required_columns.issubset(columns)
@@ -289,6 +296,29 @@ def test_no_current_source_is_approved() -> None:
     assert {row["collection_decision"] for row in rows} == {"pending_review"}
 
 
+def test_district_and_bookmyshow_are_not_approved_for_automated_bulk_collection() -> None:
+    rows = {row["source_id"]: row for row in load_source_register()}
+
+    for source_id in ["district", "bookmyshow"]:
+        row = rows[source_id]
+        assert row["collection_decision"] == "pending_review"
+        assert row["automation_permission_status"] == "Automated collection prohibited or unsuitable"
+        assert "bulk" in row["collection_decision_reason"].lower()
+        assert row["written_permission_required"] == "yes"
+
+
+def test_review_evidence_fields_are_recorded_for_preliminary_reviews() -> None:
+    rows = {row["source_id"]: row for row in load_source_register()}
+
+    assert rows["district"]["terms_url"] == "https://www.district.in/policies/terms-of-service"
+    assert rows["district"]["reviewed_by"] == "Codex"
+    assert rows["district"]["reviewed_at"]
+    assert rows["district"]["re_review_date"] == "2026-09-04"
+    assert rows["bookmyshow"]["terms_url"] == "https://in.bookmyshow.com/terms-and-conditions"
+    assert rows["bookmyshow"]["robots_url"] == "https://in.bookmyshow.com/robots.txt"
+    assert "sitemap" in rows["bookmyshow"]["review_evidence_url"]
+
+
 def test_no_source_has_automation_approval_without_review() -> None:
     rows = load_source_register()
     approved_values = {"Official API permitted", "Public export permitted", "Manual collection permitted"}
@@ -313,4 +343,7 @@ def test_approved_collection_decision_requires_evidence_and_reviewer() -> None:
             assert row["reviewed_by"].strip()
             assert row["reviewed_at"].strip()
             assert row["collection_decision_reason"].strip()
+            assert row["permitted_use_scope"].strip()
+            assert row["permitted_fields"].strip()
+            assert row["prohibited_fields"].strip()
             assert row["terms_url"].strip() or row["api_documentation_url"].strip()

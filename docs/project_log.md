@@ -24,3 +24,12 @@
 - Moved generic organizer, studio-calendar, and coffee-source discovery work into `docs/source_register/source_discovery_backlog.csv`.
 - Added review-evidence fields and a controlled `collection_decision` column.
 - Left every current source as `pending_review`.
+
+## 2026-08-05 - Day 3 source-review workflow and metadata contracts
+
+- Added a repeatable source-review checklist.
+- Added preliminary District and BookMyShow review records.
+- Added reusable organizer-website and public-studio-calendar review templates.
+- Updated District and BookMyShow source-register rows with preliminary evidence while keeping collection decisions pending.
+- Added raw-response and collection-run metadata JSON schemas, data dictionaries, fixtures, and validation tests.
+- No live workshop data, event API calls, scrapers, PostgreSQL setup, or dashboard code were added.

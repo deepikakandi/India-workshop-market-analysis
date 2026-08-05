@@ -33,3 +33,21 @@ Generic source families are tracked in `docs/source_register/source_discovery_ba
 ## Day 2 restriction
 
 No collectors, API calls, live page fetches, scraping, or database setup are part of the Day 2 source-register work.
+
+## Day 3 governance contracts
+
+Day 3 adds the source-review workflow and metadata contracts only. No live workshop data is collected.
+
+Before any future collector runs:
+
+1. The source must have a concrete `source_register.csv` row.
+2. The source must have review evidence, reviewer, reviewed timestamp, and re-review date.
+3. `automation_permission_status` must allow the operation, and `collection_decision` must be approved or explicitly permitted for the intended use.
+4. Permitted and prohibited fields must be documented.
+5. Maximum request frequency or manual-only limits must be recorded.
+6. Raw response metadata must validate against `config/schemas/raw_response_metadata.schema.json`.
+7. Collection-run metadata must validate against `config/schemas/collection_run_metadata.schema.json`.
+
+Robots rules, sitemap visibility, and public page access are not permission to reuse content. Terms can change and must be re-reviewed.
+
+Raw payloads will be immutable once collection begins and must stay under `data/raw/`. Sensitive request information such as cookies, authorization headers, session tokens, API keys, passwords, or personal credentials must never be stored.

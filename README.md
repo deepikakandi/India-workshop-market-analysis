@@ -108,6 +108,17 @@ The candidate source-discovery and compliance register lives at [docs/source_reg
 
 Generic discovery families belong in [docs/source_register/source_discovery_backlog.csv](docs/source_register/source_discovery_backlog.csv). Each discovered organizer website, studio calendar, coffee school, roaster, cafe, or training studio must later become its own concrete source-register row with a stable `source_id`.
 
+Day 3 governance files:
+
+- [docs/source_register/source_review_checklist.md](docs/source_register/source_review_checklist.md)
+- [docs/source_register/reviews/](docs/source_register/reviews/)
+- [config/schemas/raw_response_metadata.schema.json](config/schemas/raw_response_metadata.schema.json)
+- [config/schemas/collection_run_metadata.schema.json](config/schemas/collection_run_metadata.schema.json)
+- [docs/data_dictionary/raw_response_metadata.md](docs/data_dictionary/raw_response_metadata.md)
+- [docs/data_dictionary/collection_run_metadata.md](docs/data_dictionary/collection_run_metadata.md)
+
+No live workshop data has been collected yet. Robots rules and sitemap visibility do not by themselves grant permission to reuse source content. Raw payloads will be immutable once collection begins, and sensitive request information must never be stored.
+
 ## Implementation sequence
 
 1. Confirm source register and compliance rules.

@@ -1,0 +1,81 @@
+review_id: bookmyshow_preliminary_2026_08_05
+source_id: bookmyshow
+source_name: BookMyShow
+owner_or_operator: Bigtree Entertainment Private Limited
+base_url: https://in.bookmyshow.com
+source_type: event_ticketing
+reviewer: Codex
+review_date: "2026-08-05"
+review_timestamp: "2026-08-05T12:00:00-04:00"
+re_review_date: "2026-09-04"
+is_template: false
+evidence:
+  terms_url: https://in.bookmyshow.com/terms-and-conditions
+  privacy_url: https://bookmyshow.com/privacy
+  robots_url: https://in.bookmyshow.com/robots.txt
+  api_documentation_url: ""
+  review_evidence_url: https://in.bookmyshow.com/robots.txt
+  sitemap_evidence_urls:
+    - https://in.bookmyshow.com/sitemap/index.xml
+    - https://in.bookmyshow.com/sitemap/events.xml
+    - https://in.bookmyshow.com/sitemap/activities.xml
+observations:
+  public_access:
+    authentication_required: unknown
+    paid_account_required: unknown
+    event_pages_publicly_accessible: unknown
+    rendering_observed: not_reviewed_for_workshop_pages
+    public_feed_or_api_identified: false
+    robots_lists_sitemaps: true
+  terms_and_permissions:
+    summarized_restriction: "BookMyShow terms state that content and images are copyright protected and unauthorized use is prohibited. Robots and sitemap availability are not permission to reuse content."
+    commercial_use_restrictions: true
+    automated_access_restrictions: unknown
+    redistribution_restrictions: true
+    storage_restrictions: unknown
+    attribution_requirements: unknown
+    written_authorization_needed: true
+  technical_feasibility:
+    static_html: unknown
+    javascript_rendered: unknown
+    official_api: not_identified
+    public_feed: sitemap_only_observed
+    sitemap: observed
+    manual_only: true
+    login_protected: unknown
+    anti_bot_controls: unknown
+    captcha: unknown
+    geolocation_dependency: likely
+  data_usefulness:
+    cities_covered:
+      - Bengaluru
+      - Hyderabad
+    categories_covered:
+      - Cooking and Baking
+      - Art and Painting
+      - Pottery and Ceramics
+      - Coffee Making
+    fields_available: not_reviewed_for_workshop_pages
+    historical_depth: unknown
+    expected_duplicate_risk: high
+decision:
+  collection_decision: pending_review
+  automation_permission_status: Automated collection prohibited or unsuitable
+  automated_bulk_extraction_approved: false
+  bulk_extraction_approved: false
+  official_api_or_written_permission_identified: false
+  permitted_use_scope: limited_manual_feasibility_and_sitemap_structure_review_only
+  permitted_fields:
+    - source identity
+    - robots/sitemap structure observations
+    - high-level field availability notes
+  prohibited_fields:
+    - protected event descriptions
+    - images
+    - copied listing content
+    - personal data
+  maximum_request_frequency: manual_review_only
+  data_retention_limit: review_notes_only_until_permission
+  attribution_required: unknown
+  decision_reason: "Public robots rules and sitemap entries exist, but those do not provide permission to reuse content. Terms indicate content and images are copyright protected and unauthorized use is prohibited. Automated bulk extraction is not approved; limited manual feasibility review and sitemap-structure study may be recorded."
+not_legal_advice: true

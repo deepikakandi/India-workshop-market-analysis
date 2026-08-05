@@ -49,6 +49,15 @@ Each discovered organizer, studio calendar, coffee school, roaster, cafe, or tra
 
 Never mark scraping or automated collection as approved without recorded evidence from a terms, robots, API, or access review.
 
+Robots rules do not by themselves provide permission to reuse content. They must be reviewed alongside terms, privacy policy, copyright language, API documentation, and any source-specific restrictions.
+
+## Operational restriction versus governance decision
+
+- `automation_permission_status` records the current operational restriction observed during review. It answers: what is the system allowed or not allowed to do right now?
+- `collection_decision` records the final source-governance decision for the intended use. It answers: has this source been approved, rejected, or left pending for the project collection scope?
+
+These fields can differ during review. For example, a source may have `automation_permission_status = Automated collection prohibited or unsuitable` while `collection_decision = pending_review` until a human review decides whether to reject it, seek written permission, or allow only manual observation.
+
 ## Collection decision
 
 Use these controlled values in `collection_decision`:
@@ -71,6 +80,22 @@ An approved source must include review evidence:
 - `collection_decision_reason`
 
 Do not mark any source approved only because it is public or easy to access.
+
+## Day 3 source-review fields
+
+The source register includes these governance fields:
+
+- `permitted_use_scope`
+- `permitted_fields`
+- `prohibited_fields`
+- `re_review_date`
+- `written_permission_required`
+- `data_retention_limit`
+- `attribution_required`
+
+Use `written_permission_required=yes` when terms suggest reuse, automated access, commercial use, redistribution, or storage may need explicit authorization.
+
+Source terms can change. Reviewed sources need `re_review_date` and must be revisited before collection begins or after meaningful source changes.
 
 ## Registration status rule
 

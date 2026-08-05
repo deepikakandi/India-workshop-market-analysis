@@ -1,0 +1,38 @@
+review_id: organizer_websites_template
+source_id: template_only
+source_name: Organizer websites review template
+source_family: Organizer websites
+is_template: true
+template_status: not_an_approved_source
+reviewer: ""
+review_date: ""
+base_url: ""
+source_type: organizer_first_party
+instructions:
+  - "Organizer websites cannot receive blanket approval."
+  - "Every organizer must receive an individual source ID and source-register review row."
+  - "Prefer first-party APIs, public feeds, downloadable schedules, and structured calendars when available."
+  - "Do not collect any organizer website automatically until its concrete row is reviewed."
+checklist:
+  source_identity:
+    - organizer legal/business name
+    - website owner/operator
+    - stable base URL
+    - city/locality served
+  preferred_access_methods:
+    - first_party_api
+    - rss_or_atom_feed
+    - ical_or_calendar_feed
+    - downloadable_schedule
+    - sitemap
+    - manual_collection
+  required_decision_fields:
+    - collection_decision
+    - collection_decision_reason
+    - review_evidence_url
+    - reviewed_by
+    - reviewed_at
+    - re_review_date
+    - permitted_fields
+    - prohibited_fields
+    - maximum_request_frequency

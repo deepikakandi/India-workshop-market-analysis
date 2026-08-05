@@ -47,3 +47,26 @@
 - Generic source families belong in `docs/source_register/source_discovery_backlog.csv`.
 - Each discovered organizer, public studio calendar, coffee school, roaster, cafe, or training studio must later be added as its own source-register row with a stable `source_id`.
 - All current source rows remain `pending_review`; no source is approved for collection on Day 2.
+
+## 2026-08-05 - Day 3 decisions
+
+### Preliminary source decisions
+
+- District remains `pending_review`; automated collection and bulk extraction are not approved.
+- BookMyShow remains `pending_review`; automated bulk extraction is not approved.
+- Limited manual feasibility observation and sitemap-structure review may be documented for research design, but protected descriptions, images, copied listing content, and personal data must not be stored or republished.
+- This project note is not legal advice.
+
+### Permission caveats
+
+- Robots rules and sitemap availability are not permission to reuse content.
+- Source terms can change and must be re-reviewed before collection begins.
+- Written permission is required when terms do not clearly permit the intended collection or reuse.
+
+### Metadata contracts
+
+- Raw response metadata must validate against `config/schemas/raw_response_metadata.schema.json`.
+- Collection-run metadata must validate against `config/schemas/collection_run_metadata.schema.json`.
+- Raw payload paths must remain under `data/raw/`.
+- Raw payloads will be immutable once collection begins.
+- Sensitive request information, including cookies, authorization headers, session tokens, API keys, passwords, and personal credentials, must never be stored.
