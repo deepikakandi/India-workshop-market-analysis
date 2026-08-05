@@ -1,0 +1,224 @@
+{
+  "analysis_as_of_date": "2026-08-05",
+  "confidence_distribution": {
+    "classification_confidence": {
+      "high": 10,
+      "medium": 2
+    },
+    "date_confidence": {
+      "high": 2,
+      "low": 5,
+      "medium": 5
+    },
+    "price_confidence": {
+      "high": 7,
+      "low": 5
+    },
+    "status_confidence": {
+      "high": 1,
+      "medium": 11
+    }
+  },
+  "csv_path": "data/manual/observations/2026-08-05/pilot_event_records_batch_01.csv",
+  "current_vs_historical_records": {
+    "active_or_in_progress": 1,
+    "historical": 2,
+    "undated_course_or_product": 5,
+    "undated_recurring_product": 4
+  },
+  "duplicate_candidates": [],
+  "generated_at": "2026-08-05T15:02:11.629501-04:00",
+  "governance_failures": [],
+  "invalid_records": 0,
+  "missingness_by_field": {
+    "additional_fee_inr": 12,
+    "audience_codes": 0,
+    "booking_required": 0,
+    "category_original": 0,
+    "certificate_included": 11,
+    "city_code": 0,
+    "city_original": 0,
+    "classification_confidence": 0,
+    "date_confidence": 0,
+    "delivery_format_code": 0,
+    "demand_signal_notes": 0,
+    "description_short_original": 0,
+    "discounted_price_inr": 11,
+    "duration_minutes": 4,
+    "entered_by": 0,
+    "event_end_at": 10,
+    "event_start_at": 10,
+    "event_status_code": 0,
+    "event_title_original": 0,
+    "evidence_url": 0,
+    "interested_count": 12,
+    "listed_price_inr": 5,
+    "locality_original": 0,
+    "manual_record_id": 0,
+    "materials_included": 12,
+    "maximum_age": 10,
+    "minimum_age": 6,
+    "missing_field_notes": 0,
+    "observed_at": 0,
+    "operating_model_code": 0,
+    "organizer_name_original": 0,
+    "price_confidence": 0,
+    "price_tier_code": 5,
+    "pricing_unit_code": 0,
+    "primary_category_code": 0,
+    "product_type_code": 0,
+    "recurrence_text_original": 1,
+    "recurrence_type": 0,
+    "registration_deadline": 12,
+    "reviewer_notes": 0,
+    "seats_available": 12,
+    "seats_total": 12,
+    "secondary_category_codes": 12,
+    "skill_level_code": 0,
+    "sold_out_observed": 0,
+    "source_id": 0,
+    "source_record_identifier": 0,
+    "source_url": 0,
+    "status_confidence": 0,
+    "subcategory_code": 2,
+    "take_home_product": 10,
+    "tax_included": 11,
+    "venue_name_original": 0,
+    "verification_status": 0,
+    "verified_by": 0,
+    "waitlist_available": 12
+  },
+  "observation_batch_date": "2026-08-05",
+  "price_tier_distribution": {
+    "high_premium": 2,
+    "missing": 5,
+    "premium": 4,
+    "standard": 1
+  },
+  "records_by_category": {
+    "art_and_painting": 3,
+    "coffee_making": 2,
+    "cooking_and_baking": 3,
+    "pottery_and_ceramics": 4
+  },
+  "records_by_city": {
+    "bengaluru": 6,
+    "hyderabad": 6
+  },
+  "records_by_product_type": {
+    "certification_course": 1,
+    "class_pack": 1,
+    "individual_one_time_workshop": 4,
+    "professional_course": 2,
+    "recurring_class": 4
+  },
+  "records_by_source": {
+    "baking_hub": 2,
+    "crust_and_crumble": 1,
+    "kalasaara": 1,
+    "mud_effects": 2,
+    "mystic_palette": 2,
+    "scai": 2,
+    "tworks": 2
+  },
+  "source_url_coverage": {
+    "records_missing_source_url": 0,
+    "records_with_source_url": 12
+  },
+  "temporal_classification_method": "Compare event_start_at/event_end_at with the explicit analysis_as_of_date; do not invent event dates for undated recurring products, courses, or workshop products.",
+  "temporal_record_counts": {
+    "active_or_in_progress": 1,
+    "historical": 2,
+    "undated_course_or_product": 5,
+    "undated_recurring_product": 4
+  },
+  "total_records": 12,
+  "valid_records": 12,
+  "validation": {
+    "invalid_records": 0,
+    "path": "data/manual/observations/2026-08-05/pilot_event_records_batch_01.csv",
+    "row_count": 12,
+    "row_results": [
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_001",
+        "row_number": 2,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_002",
+        "row_number": 3,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_003",
+        "row_number": 4,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_004",
+        "row_number": 5,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_005",
+        "row_number": 6,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_006",
+        "row_number": 7,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_007",
+        "row_number": 8,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_008",
+        "row_number": 9,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_009",
+        "row_number": 10,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_010",
+        "row_number": 11,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_011",
+        "row_number": 12,
+        "valid": true
+      },
+      {
+        "errors": [],
+        "manual_record_id": "d5_b01_012",
+        "row_number": 13,
+        "valid": true
+      }
+    ],
+    "valid": true,
+    "valid_records": 12
+  },
+  "verification_status_distribution": {
+    "self_checked": 12
+  },
+  "warnings": [
+    "No duplicate or governance warnings from local validation."
+  ]
+}

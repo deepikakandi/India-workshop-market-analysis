@@ -41,3 +41,11 @@
 - Selected a balanced Day 5 manual pilot in `config/pilot/manual_source_selection.yml`; no live workshop records were collected. Later correction made Aestraa art-only and added flexible record targets where shortfalls are allowed.
 - Added the manual event-record JSON Schema, data dictionary, CSV import template, validator, fixture, and tests.
 - Kept automated collection blocked unless a future source review records an official API, feed, export, written permission, or other documented permission basis.
+
+## 2026-08-05 - Day 5 manual observation batch
+
+- Created the first real manual observation batch with 12 records from approved first-party sources only.
+- Sources observed: Baking Hub, Mud Effects, Kalasaara, SCAI, T-Works, Crust & Crumble, and Mystic Palette.
+- No scraping, API calls, browser automation, terminal network tools, booking forms, images, customer details, testimonials, cookies, or credentials were used or stored.
+- Added a manual CSV validation CLI, batch quality-report generator, quality report outputs, and tests.
+- Initial quality gate passed with explicit `--as-of-date 2026-08-05`; controlled expansion was not performed because the 12-record batch met the initial quality objective and source distinctness took priority over count. Verification status was corrected to `self_checked` for all Day 5 records.

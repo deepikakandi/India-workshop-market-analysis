@@ -30,10 +30,15 @@ MANUAL_COLLECTION_DECISIONS = {
     "approved_manual_collection",
     "approved_limited_public_collection",
 }
-SENSITIVE_TEXT_PATTERN = re.compile(
-    r"(authorization|cookie|set-cookie|token|password|passwd|secret|session|api[-_]?key|customer phone|customer email|personal data)",
+SENSITIVE_FIELD_PATTERN = re.compile(
+    r"(authorization|cookie|set-cookie|token|password|passwd|secret|session|api[-_]?key|customer|personal)",
     re.IGNORECASE,
 )
+SENSITIVE_VALUE_PATTERN = re.compile(
+    r"(authorization|set-cookie|api[-_]?key|access token|password|passwd|secret|customer phone|customer email|personal data)",
+    re.IGNORECASE,
+)
+EMAIL_PATTERN = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.IGNORECASE)
 IMAGE_URL_PATTERN = re.compile(r"https?://\S+\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?\S*)?", re.IGNORECASE)
 SOURCE_APPROVED_FIELD_CHECKS = {
     "event_title_original",
@@ -181,8 +186,11 @@ def _controlled_value_errors(record: dict[str, Any], taxonomy_path: Path) -> lis
         ("pricing_unit_code", "pricing_units"),
         ("price_tier_code", "price_tiers"),
     ]
+    nullable_controlled_fields = {"price_tier_code"}
     for field, group in checks:
         value = record.get(field)
+        if value is None and field in nullable_controlled_fields:
+            continue
         if value not in codes[group]:
             errors.append(f"{field} has invalid value: {value}")
 
@@ -209,11 +217,15 @@ def _business_rule_errors(record: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     listed_price = record.get("listed_price_inr")
     discounted_price = record.get("discounted_price_inr")
-    if listed_price is not None and listed_price < 0:
+    if isinstance(listed_price, int | float) and listed_price < 0:
         errors.append("listed_price_inr must be non-negative")
-    if discounted_price is not None and discounted_price < 0:
+    if isinstance(discounted_price, int | float) and discounted_price < 0:
         errors.append("discounted_price_inr must be non-negative")
-    if listed_price is not None and discounted_price is not None and discounted_price > listed_price:
+    if (
+        isinstance(listed_price, int | float)
+        and isinstance(discounted_price, int | float)
+        and discounted_price > listed_price
+    ):
         errors.append("discounted_price_inr must not exceed listed_price_inr")
 
     minimum_age = record.get("minimum_age")
@@ -233,11 +245,19 @@ def _business_rule_errors(record: dict[str, Any]) -> list[str]:
     if isinstance(description, str) and len(description) > 280:
         errors.append("description_short_original must be a short researcher-written summary")
 
+    verification_status = record.get("verification_status")
+    entered_by = record.get("entered_by")
+    verified_by = record.get("verified_by")
+    if verification_status == "independently_verified" and entered_by == verified_by:
+        errors.append("independently_verified records require a different verified_by reviewer")
+    if verification_status == "entered_only" and verified_by:
+        errors.append("entered_only records must not set verified_by")
+
     for key, value in record.items():
-        if SENSITIVE_TEXT_PATTERN.search(key):
+        if SENSITIVE_FIELD_PATTERN.search(key):
             errors.append(f"manual record contains disallowed sensitive field name: {key}")
         if isinstance(value, str):
-            if SENSITIVE_TEXT_PATTERN.search(value):
+            if SENSITIVE_VALUE_PATTERN.search(value) or EMAIL_PATTERN.search(value):
                 errors.append(f"manual record contains sensitive text in {key}")
             if IMAGE_URL_PATTERN.search(value):
                 errors.append(f"manual record contains image URL in {key}")

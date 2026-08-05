@@ -31,6 +31,10 @@ data/manual/**
 !data/manual/.gitkeep
 !data/manual/templates/
 !data/manual/templates/pilot_event_records.csv
+!data/manual/observations/
+!data/manual/observations/2026-08-05/
+!data/manual/observations/2026-08-05/pilot_event_records_batch_01.csv
+!data/manual/observations/2026-08-05/batch_01_collection_notes.md
 
 # Notebooks
 .ipynb_checkpoints/
@@ -44,6 +48,9 @@ dbt/logs/
 reports/exports/**
 reports/powerbi/**
 !reports/exports/.gitkeep
+!reports/exports/day5_batch_01_quality_report.json
+!reports/exports/day5_batch_01_quality_report.md
+!reports/exports/day5_batch_01_validation_result.json
 !reports/powerbi/.gitkeep
 
 # OS/editor

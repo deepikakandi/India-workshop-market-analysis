@@ -78,3 +78,11 @@ Decision: The first data pilot will use manually transcribed factual fields from
 Rationale: First-party sources provide cleaner provenance and lower duplicate risk for the first pilot. Manual transcription allows controlled validation of the taxonomy and event-record contract without assuming scraping, reuse, or API rights.
 
 Consequence: Day 5 collection must use `config/pilot/manual_source_selection.yml` and `config/schemas/manual_event_record.schema.json`. `automation_permission_status` remains restrictive even when `collection_decision = approved_manual_collection`. Manual approval is an internal project-governance decision only; it does not imply source-owner license or endorsement.
+
+## 2026-08-05 - Day 5 quality-gated manual collection decision
+
+Decision: Day 5 keeps the first manual observation batch at 12 validated records and does not expand to 20-30 records in this pass.
+
+Rationale: The initial quality gate passed, but several approved sources expose recurring products rather than many independently dated occurrences. The project will not duplicate, split, or manufacture records to hit a volume target.
+
+Consequence: Day 6 should review the 12-record batch, resolve source-page ambiguities, and then decide whether to collect a second manual batch from the same approved sources or add more reviewed first-party sources. Temporal classifications must be generated with an explicit analysis date, and Day 5 records remain `self_checked` until a different reviewer verifies them.

@@ -21,3 +21,13 @@ Researchers must write a short factual `description_short_original` themselves. 
 ## Validation rules
 
 Validation enforces allowed city/category/taxonomy codes, non-negative prices, discounted price not above list price, age ranges, seat counts, timezone-aware observation timestamps, no unapproved fields, no image URLs or sensitive strings, and no inference that `registration_closed` means `sold_out`.
+
+## Verification semantics
+
+Use controlled `verification_status` values:
+
+- `entered_only`: the record was entered but has not yet been checked; `verified_by` must be blank.
+- `self_checked`: the same researcher entered and checked the record against the source evidence.
+- `independently_verified`: a different reviewer checked the record against the source evidence; `verified_by` must differ from `entered_by`.
+
+The Day 5 Batch 01 records use `self_checked` because the same researcher entered and checked the records. They must not be described as independently verified.

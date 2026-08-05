@@ -188,3 +188,9 @@ Manual approval is intentionally narrow: `approved_manual_collection` is an inte
 ## Current scaffold status
 
 This repository currently contains structure, configuration, documentation, Docker Compose, dbt skeleton files, and basic tests only. It intentionally does not include collectors, credentials, production schemas, or full application logic yet.
+
+## Day 5 manual observation batch
+
+Day 5 adds the first real, non-synthetic manual observation batch at [data/manual/observations/2026-08-05/pilot_event_records_batch_01.csv](data/manual/observations/2026-08-05/pilot_event_records_batch_01.csv). Records were manually transcribed only from approved first-party sources and validated with [scripts/validate_manual_event_records.py](scripts/validate_manual_event_records.py). The quality report outputs are [reports/exports/day5_batch_01_quality_report.json](reports/exports/day5_batch_01_quality_report.json) and [reports/exports/day5_batch_01_quality_report.md](reports/exports/day5_batch_01_quality_report.md).
+
+The batch contains 12 records. The initial quality gate passed using explicit `--as-of-date 2026-08-05`, and no controlled expansion was performed because quality and uniqueness took priority over increasing the count. All Day 5 records are `self_checked`, not independently verified.

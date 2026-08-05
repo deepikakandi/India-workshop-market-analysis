@@ -1,0 +1,81 @@
+{
+  "invalid_records": 0,
+  "path": "data/manual/observations/2026-08-05/pilot_event_records_batch_01.csv",
+  "row_count": 12,
+  "row_results": [
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_001",
+      "row_number": 2,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_002",
+      "row_number": 3,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_003",
+      "row_number": 4,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_004",
+      "row_number": 5,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_005",
+      "row_number": 6,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_006",
+      "row_number": 7,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_007",
+      "row_number": 8,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_008",
+      "row_number": 9,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_009",
+      "row_number": 10,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_010",
+      "row_number": 11,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_011",
+      "row_number": 12,
+      "valid": true
+    },
+    {
+      "errors": [],
+      "manual_record_id": "d5_b01_012",
+      "row_number": 13,
+      "valid": true
+    }
+  ],
+  "valid": true,
+  "valid_records": 12
+}

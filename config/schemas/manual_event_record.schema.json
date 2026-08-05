@@ -103,10 +103,9 @@
     "verification_status": {
       "type": "string",
       "enum": [
-        "unverified",
-        "needs_review",
-        "verified",
-        "rejected"
+        "entered_only",
+        "self_checked",
+        "independently_verified"
       ]
     },
     "event_title_original": {
@@ -291,7 +290,10 @@
       "type": "string"
     },
     "price_tier_code": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "materials_included": {
       "type": [
@@ -394,5 +396,6 @@
       ],
       "maxLength": 280
     }
-  }
+  },
+  "schema_version": "1.0.2"
 }
