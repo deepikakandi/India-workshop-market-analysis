@@ -1,13 +1,33 @@
 {
   "pilot_cities": [
-    "Bengaluru",
-    "Hyderabad"
+    {
+      "city_code": "bengaluru",
+      "city_name": "Bengaluru",
+      "metro_region": "South India"
+    },
+    {
+      "city_code": "hyderabad",
+      "city_name": "Hyderabad",
+      "metro_region": "South India"
+    }
   ],
   "pilot_categories": [
-    "Cooking and Baking",
-    "Art and Painting",
-    "Pottery and Ceramics",
-    "Coffee Making"
+    {
+      "primary_category_code": "cooking_and_baking",
+      "primary_category_name": "Cooking and Baking"
+    },
+    {
+      "primary_category_code": "art_and_painting",
+      "primary_category_name": "Art and Painting"
+    },
+    {
+      "primary_category_code": "pottery_and_ceramics",
+      "primary_category_name": "Pottery and Ceramics"
+    },
+    {
+      "primary_category_code": "coffee_making",
+      "primary_category_name": "Coffee Making"
+    }
   ],
   "pilot_products": [
     "Individual Workshops",

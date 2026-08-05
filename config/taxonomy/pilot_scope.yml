@@ -1,18 +1,324 @@
+schema_version: 1
+canonical_taxonomy_source: true
+last_updated: "2026-08-05"
+
+sync_policy:
+  canonical_file: config/taxonomy/pilot_scope.yml
+  mirrored_files:
+    - dbt/seeds/pilot_categories.csv
+    - dbt/seeds/pilot_cities.csv
+    - tests/fixtures/pilot_scope.json
+  manually_maintained_docs:
+    - docs/project_scope/pilot_scope.md
+    - docs/source_register/pilot_collection_plan.md
+    - docs/dashboard/powerbi_pilot_dashboard.md
+    - docs/notebook_plans/pilot_notebooks.md
+  note: "Update this canonical YAML first, then refresh mirrored seed and fixture files."
+
 pilot:
   cities:
-    - Bengaluru
-    - Hyderabad
-  categories:
-    - Cooking and Baking
-    - Art and Painting
-    - Pottery and Ceramics
-    - Coffee Making
-  products:
-    - Individual Workshops
-    - Camps
-    - Birthday Events
-  formats:
-    - Dedicated Studio
-    - Rented Venue
-    - Mobile
-    - Online
+    - city_code: bengaluru
+      city_name: Bengaluru
+      metro_region: South India
+      is_pilot_city: true
+    - city_code: hyderabad
+      city_name: Hyderabad
+      metro_region: South India
+      is_pilot_city: true
+  primary_categories:
+    - primary_category_code: cooking_and_baking
+      primary_category_name: Cooking and Baking
+      is_pilot_category: true
+      subcategories:
+        - subcategory_code: general_cooking
+          subcategory_name: General cooking
+        - subcategory_code: baking
+          subcategory_name: Baking
+        - subcategory_code: cake_baking
+          subcategory_name: Cake baking
+        - subcategory_code: cake_decoration
+          subcategory_name: Cake decoration
+        - subcategory_code: bread_making
+          subcategory_name: Bread making
+        - subcategory_code: cookies_and_desserts
+          subcategory_name: Cookies and desserts
+        - subcategory_code: chocolate_and_confectionery
+          subcategory_name: Chocolate and confectionery
+        - subcategory_code: pizza_and_savory_baking
+          subcategory_name: Pizza and savory baking
+        - subcategory_code: regional_cuisine
+          subcategory_name: Regional cuisine
+        - subcategory_code: international_cuisine
+          subcategory_name: International cuisine
+        - subcategory_code: kids_cooking
+          subcategory_name: Kids cooking
+        - subcategory_code: professional_culinary_training
+          subcategory_name: Professional culinary training
+    - primary_category_code: art_and_painting
+      primary_category_name: Art and Painting
+      is_pilot_category: true
+      subcategories:
+        - subcategory_code: canvas_painting
+          subcategory_name: Canvas painting
+        - subcategory_code: watercolor
+          subcategory_name: Watercolor
+        - subcategory_code: acrylic_painting
+          subcategory_name: Acrylic painting
+        - subcategory_code: coffee_painting
+          subcategory_name: Coffee painting
+        - subcategory_code: resin_art
+          subcategory_name: Resin art
+        - subcategory_code: fluid_art
+          subcategory_name: Fluid art
+        - subcategory_code: tote_bag_painting
+          subcategory_name: Tote-bag painting
+        - subcategory_code: texture_art
+          subcategory_name: Texture art
+        - subcategory_code: sketching_and_illustration
+          subcategory_name: Sketching and illustration
+        - subcategory_code: traditional_indian_art
+          subcategory_name: Traditional Indian art
+        - subcategory_code: mixed_media_art
+          subcategory_name: Mixed-media art
+    - primary_category_code: pottery_and_ceramics
+      primary_category_name: Pottery and Ceramics
+      is_pilot_category: true
+      subcategories:
+        - subcategory_code: wheel_pottery
+          subcategory_name: Wheel pottery
+        - subcategory_code: hand_built_pottery
+          subcategory_name: Hand-built pottery
+        - subcategory_code: coil_pottery
+          subcategory_name: Coil pottery
+        - subcategory_code: ceramic_painting
+          subcategory_name: Ceramic painting
+        - subcategory_code: clay_modeling
+          subcategory_name: Clay modeling
+        - subcategory_code: clay_miniatures
+          subcategory_name: Clay miniatures
+        - subcategory_code: kintsugi
+          subcategory_name: Kintsugi
+        - subcategory_code: pottery_decoration
+          subcategory_name: Pottery decoration
+        - subcategory_code: functional_ceramics
+          subcategory_name: Functional ceramics
+        - subcategory_code: parent_child_pottery
+          subcategory_name: Parent-child pottery
+    - primary_category_code: coffee_making
+      primary_category_name: Coffee Making
+      is_pilot_category: true
+      subcategories:
+        - subcategory_code: manual_brewing
+          subcategory_name: Manual brewing
+        - subcategory_code: pour_over
+          subcategory_name: Pour-over
+        - subcategory_code: espresso
+          subcategory_name: Espresso
+        - subcategory_code: latte_art
+          subcategory_name: Latte art
+        - subcategory_code: coffee_cupping
+          subcategory_name: Coffee cupping
+        - subcategory_code: sensory_and_tasting
+          subcategory_name: Sensory and tasting
+        - subcategory_code: roasting
+          subcategory_name: Roasting
+        - subcategory_code: barista_fundamentals
+          subcategory_name: Barista fundamentals
+        - subcategory_code: professional_barista_training
+          subcategory_name: Professional barista training
+        - subcategory_code: home_brewing
+          subcategory_name: Home brewing
+        - subcategory_code: bean_to_cup_education
+          subcategory_name: Bean-to-cup education
+
+classification_output_fields:
+  - primary_category_code
+  - subcategory_code
+  - secondary_category_codes
+  - classification_confidence
+  - classification_method
+  - original_category_text
+
+category_boundary_rules:
+  - rule_id: coffee_painting_is_art
+    rule: "Coffee painting is art_and_painting, not coffee_making."
+  - rule_id: coffee_mug_activity_depends_on_material
+    rule: "Coffee-mug painting or decoration is art_and_painting or pottery_and_ceramics depending on the material and activity."
+  - rule_id: cafe_hosting_not_category
+    rule: "A workshop hosted at a cafe is not automatically a coffee_making workshop."
+  - rule_id: coffee_flavored_cake_is_baking
+    rule: "Coffee-flavored cake belongs under cooking_and_baking."
+  - rule_id: latte_art_is_coffee
+    rule: "Latte art belongs under coffee_making."
+  - rule_id: ceramic_painting_is_pottery
+    rule: "Ceramic painting belongs under pottery_and_ceramics."
+  - rule_id: resin_art_is_art
+    rule: "Resin art belongs under art_and_painting."
+  - rule_id: hybrid_secondary_tags
+    rule: "A hybrid workshop may have one primary category and one or more secondary tags."
+  - rule_id: preserve_source_text
+    rule: "Preserve the original source category and title before assigning standardized categories."
+
+controlled_taxonomies:
+  audience_segments:
+    - audience_code: early_childhood
+      audience_name: Early childhood
+      age_min: 3
+      age_max: 5
+    - audience_code: young_children
+      audience_name: Young children
+      age_min: 6
+      age_max: 9
+    - audience_code: preteens
+      audience_name: Preteens
+      age_min: 10
+      age_max: 12
+    - audience_code: teenagers
+      audience_name: Teenagers
+      age_min: 13
+      age_max: 17
+    - audience_code: young_adults
+      audience_name: Young adults
+      age_min: 18
+      age_max: 24
+    - audience_code: adults
+      audience_name: Adults
+      age_min: 25
+      age_max: 44
+    - audience_code: mature_adults
+      audience_name: Mature adults
+      age_min: 45
+      age_max: 59
+    - audience_code: seniors
+      audience_name: Seniors
+      age_min: 60
+      age_max: null
+    - audience_code: families
+      audience_name: Families
+      age_min: null
+      age_max: null
+    - audience_code: couples
+      audience_name: Couples
+      age_min: null
+      age_max: null
+    - audience_code: parent_child
+      audience_name: Parent-child
+      age_min: null
+      age_max: null
+    - audience_code: corporate_groups
+      audience_name: Corporate groups
+      age_min: null
+      age_max: null
+    - audience_code: schools
+      audience_name: Schools
+      age_min: null
+      age_max: null
+    - audience_code: all_ages
+      audience_name: All ages
+      age_min: null
+      age_max: null
+    - audience_code: unspecified
+      audience_name: Unspecified
+      age_min: null
+      age_max: null
+  delivery_formats:
+    - in_person
+    - online_live
+    - online_recorded
+    - hybrid
+    - unspecified
+  operating_models:
+    - dedicated_studio
+    - home_based
+    - rented_event_venue
+    - cafe_or_restaurant_partnership
+    - mobile_apartment_workshop
+    - mobile_school_workshop
+    - mobile_corporate_office_workshop
+    - hotel_or_resort
+    - online_only
+    - hybrid_operator
+    - unknown
+  product_event_types:
+    - individual_one_time_workshop
+    - recurring_class
+    - class_pack
+    - membership
+    - birthday_party
+    - holiday_camp
+    - summer_camp
+    - corporate_event
+    - school_program
+    - apartment_community_event
+    - parent_child_event
+    - couples_event
+    - private_group_event
+    - certification_course
+    - professional_course
+    - free_promotional_event
+    - other
+  price_tiers:
+    - price_tier_code: free
+      price_tier_name: Free
+      min_inr: 0
+      max_inr: 0
+      inclusive_min: true
+      inclusive_max: true
+    - price_tier_code: low_cost
+      price_tier_name: Low-cost
+      min_inr: 1
+      max_inr: 499
+      inclusive_min: true
+      inclusive_max: true
+    - price_tier_code: standard
+      price_tier_name: Standard
+      min_inr: 500
+      max_inr: 1499
+      inclusive_min: true
+      inclusive_max: true
+    - price_tier_code: premium
+      price_tier_name: Premium
+      min_inr: 1500
+      max_inr: 4999
+      inclusive_min: true
+      inclusive_max: true
+    - price_tier_code: high_premium
+      price_tier_name: High-premium
+      min_inr: 5000
+      max_inr: null
+      inclusive_min: true
+      inclusive_max: false
+  event_statuses:
+    - scheduled
+    - available
+    - limited_availability
+    - sold_out
+    - registration_closed
+    - cancelled
+    - postponed
+    - completed
+    - unavailable
+    - unknown
+  skill_levels:
+    - beginner
+    - intermediate
+    - advanced
+    - all_levels
+    - professional
+    - unspecified
+  pricing_units:
+    - per_participant
+    - per_pair
+    - per_family
+    - per_group
+    - per_session
+    - per_course
+    - per_month
+    - starting_price
+    - free
+    - unknown
+
+notes:
+  - "Preserve source minimum and maximum ages separately from standardized audience segments."
+  - "Price tiers are provisional analytical tiers and may be recalibrated after the pilot price distribution is examined."
+  - "Do not map registration_closed to sold_out."

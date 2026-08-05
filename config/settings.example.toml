@@ -12,6 +12,8 @@ cities = ["Bengaluru", "Mumbai", "Delhi NCR", "Hyderabad", "Pune", "Chennai"]
 pilot_cities = ["Bengaluru", "Hyderabad"]
 
 [taxonomy]
+# Canonical taxonomy source: config/taxonomy/pilot_scope.yml.
+# Keep these simple lists as sample settings only.
 primary_categories = [
   "Cooking and Baking",
   "Art and Painting",

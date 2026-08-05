@@ -87,6 +87,27 @@ APIs/web/manual sources
 - Docker Compose: local PostgreSQL and dbt runtime.
 - Power BI: connects to `powerbi` schema tables/views.
 
+## Canonical taxonomy and source register
+
+The canonical machine-readable pilot taxonomy is [config/taxonomy/pilot_scope.yml](config/taxonomy/pilot_scope.yml). It defines pilot cities, primary categories, subcategories, category-boundary rules, audience segments, delivery formats, operating models, product/event types, price tiers, event statuses, skill levels, and pricing units.
+
+Mirrored files should be refreshed from the canonical YAML when the taxonomy changes:
+
+- [dbt/seeds/pilot_categories.csv](dbt/seeds/pilot_categories.csv)
+- [dbt/seeds/pilot_cities.csv](dbt/seeds/pilot_cities.csv)
+- [tests/fixtures/pilot_scope.json](tests/fixtures/pilot_scope.json)
+
+Working documentation is maintained manually for readability:
+
+- [docs/project_scope/pilot_scope.md](docs/project_scope/pilot_scope.md)
+- [docs/source_register/pilot_collection_plan.md](docs/source_register/pilot_collection_plan.md)
+- [docs/dashboard/powerbi_pilot_dashboard.md](docs/dashboard/powerbi_pilot_dashboard.md)
+- [docs/notebook_plans/pilot_notebooks.md](docs/notebook_plans/pilot_notebooks.md)
+
+The candidate source-discovery and compliance register lives at [docs/source_register/source_register.csv](docs/source_register/source_register.csv). Source rows are candidates only; automated collection is not approved until terms, access method, evidence, reviewer, and collection limits are reviewed.
+
+Generic discovery families belong in [docs/source_register/source_discovery_backlog.csv](docs/source_register/source_discovery_backlog.csv). Each discovered organizer website, studio calendar, coffee school, roaster, cafe, or training studio must later become its own concrete source-register row with a stable `source_id`.
+
 ## Implementation sequence
 
 1. Confirm source register and compliance rules.

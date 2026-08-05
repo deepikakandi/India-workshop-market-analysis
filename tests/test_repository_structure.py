@@ -47,10 +47,11 @@ def test_pilot_scope_fixture_matches_current_plan() -> None:
     fixture = PROJECT_ROOT / "tests" / "fixtures" / "pilot_scope.json"
     pilot_scope = json.loads(fixture.read_text())
 
-    assert pilot_scope["pilot_cities"] == ["Bengaluru", "Hyderabad"]
-    assert pilot_scope["pilot_categories"] == [
-        "Cooking and Baking",
-        "Art and Painting",
-        "Pottery and Ceramics",
-        "Coffee Making",
+    assert [city["city_name"] for city in pilot_scope["pilot_cities"]] == [
+        "Bengaluru",
+        "Hyderabad",
     ]
+    assert [
+        category["primary_category_name"]
+        for category in pilot_scope["pilot_categories"]
+    ] == ["Cooking and Baking", "Art and Painting", "Pottery and Ceramics", "Coffee Making"]
